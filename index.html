@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlos Daniel L. Saguran — IT Professional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+
+  <!-- INTRO OVERLAY -->
+  <div id="intro">
+    <canvas id="intro-canvas"></canvas>
+    <div class="intro-content">
+      <div class="intro-line intro-line-1">
+        <span class="intro-word" data-text="WELCOME">WELCOME</span>
+      </div>
+      <div class="intro-line intro-line-2">
+        <span class="intro-word" data-text="TO MY">TO MY</span>
+      </div>
+      <div class="intro-line intro-line-3">
+        <span class="intro-accent">PORTFOLIO</span>
+      </div>
+      <div class="intro-sub">Carlos Daniel L. Saguran</div>
+      <div class="intro-bar-wrap"><div class="intro-bar"></div></div>
+      <div class="intro-skip">[ press any key or click to skip ]</div>
+    </div>
+    <div class="intro-scanlines"></div>
+    <div class="intro-vignette"></div>
+    <div class="intro-corner tl"></div>
+    <div class="intro-corner tr"></div>
+    <div class="intro-corner bl"></div>
+    <div class="intro-corner br"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">CARLOS.DEV</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li>
+        <a href="https://www.facebook.com/Coryxcarlos" target="_blank" rel="noopener" class="nav-fb">
+          <svg viewBox="0 0 24 24" aria-label="Facebook"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          Facebook
+        </a>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <button id="theme-toggle" class="theme-toggle-icon" aria-label="Toggle theme" title="Toggle light/dark mode">
+        <!-- Moon icon (shown in dark mode) -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <!-- Sun icon (shown in light mode) -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">IT Student &nbsp;·&nbsp; STI College Global City</div>
+      <h1 class="hero-name">
+        Carlos<br/>
+        Daniel<br/>
+        <span>Saguran</span>
+      </h1>
+      <p class="hero-title">
+        Bachelor of Science in Information Technology<br/>
+        STI College Global City<br/>
+        Passionate about building innovative tech solutions.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#about" class="btn btn-outline">About Me</a>
+        <a href="https://www.facebook.com/Coryxcarlos" target="_blank" rel="noopener" class="btn btn-fb">
+          <svg viewBox="0 0 24 24" aria-label="Facebook"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <button id="cv-download-btn" class="btn btn-cv" aria-label="Download CV">
+          <span class="cv-btn-inner">
+            <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <polyline points="9,15 12,18 15,15"/>
+            </svg>
+            <span class="cv-label">Download CV</span>
+          </span>
+          <span class="cv-btn-glitch" aria-hidden="true">Download CV</span>
+          <span class="cv-btn-scan"></span>
+        </button>
+      </div>
+      <div id="hero-mode-note" class="hero-mode-note">⚡ DARK MODE — CRT synthwave active</div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <div class="hero-img-frame">
+        <img
+          id="hero-photo"
+          class="hero-photo hidden"
+          src="hero-dark.jpg"
+          data-dark="hero-dark.jpg"
+          data-light="hero-light.jpg"
+          alt="Carlos Daniel L. Saguran"
+        />
+        <div class="placeholder-img">
+          <span>CDS</span>
+          <p>Add your photo here</p>
+        </div>
+        <div class="hero-img-badge">BSIT · 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <div id="about">
+    <div class="about-inner">
+
+      <div>
+        <div class="section-label reveal">About Me</div>
+        <h2 class="section-title reveal">Driven by<br/>Technology</h2>
+        <p class="about-bio reveal">
+          I'm Carlos Daniel L. Saguran, an Information Technology student at STI College Global City with a passion for programming, web development, and creating solutions that make a real-world impact. I thrive on learning new technologies and applying them to meaningful projects.
+        </p>
+
+        <div style="margin-top: 2.5rem;" class="reveal">
+          <div class="section-label" style="margin-bottom: 1rem;">Skills</div>
+          <div class="skills-row">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">Web Development</span>
+            <span class="skill-pill">UI/UX Design</span>
+            <span class="skill-pill">Troubleshooting</span>
+            <span class="skill-pill">Network Config</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <div class="stat-number">BSIT</div>
+            <div class="stat-desc">Degree Program</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">STI</div>
+            <div class="stat-desc">Global City</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">IT</div>
+            <div class="stat-desc">Field of Study</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">PH</div>
+            <div class="stat-desc">Based in Philippines</div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="section-label" style="margin-bottom: 1.2rem;">Education</div>
+          <div class="edu-timeline">
+            <div class="edu-item current">
+              <div class="edu-year">Present</div>
+              <div class="edu-degree">BS Information Technology</div>
+              <div class="edu-school">STI College Global City</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="projects">
+    <div class="projects-inner">
+      <div class="section-label reveal">Selected Work</div>
+      <h2 class="section-title reveal">Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 — LiveAlert -->
+        <div class="project-card reveal">
+          <div class="project-num">01</div>
+          <h3 class="project-title">LiveAlert</h3>
+          <p class="project-desc">
+            A live stream reporting system integrated with the Philippine National Police (PNP). LiveAlert enables real-time incident reporting through a web-based platform, allowing citizens to stream and submit reports directly to local PNP units for faster emergency response and community safety monitoring.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Web Dev</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Live Streaming</span>
+            <span class="project-tag">PNP Integration</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 — MedTrack -->
+        <div class="project-card reveal">
+          <div class="project-num">02</div>
+          <h3 class="project-title">MedTrack</h3>
+          <p class="project-desc">
+            A performance tracking system built for medical sales representatives. MedTrack streamlines the monitoring of rep activities, client visits, and sales metrics — giving managers a centralized dashboard to evaluate productivity, set targets, and generate performance reports across territories.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">C#</span>
+            <span class="project-tag">Database</span>
+            <span class="project-tag">Dashboard</span>
+            <span class="project-tag">System Dev</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 — NIGHT CITY -->
+        <div class="project-card reveal project-card--game">
+          <div class="project-num">03</div>
+          <h3 class="project-title">Night City</h3>
+          <p class="project-desc">
+            A solo-developed 2D side-scrolling platformer set in a neon-drenched cyberpunk cityscape. NIGHT CITY features hand-crafted level design, custom enemy AI, and a dark atmospheric soundtrack — built from the ground up as a personal passion project exploring game development and interactive design.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Game Dev</span>
+            <span class="project-tag">Platformer</span>
+            <span class="project-tag">Solo Project</span>
+            <span class="project-tag">2D</span>
+          </div>
+        </div>
+
+        <!-- CONTACT CTA -->
+        <div class="project-card contact-card reveal">
+          <div class="section-label">Get in Touch</div>
+          <p>Open to collaborations, projects, and opportunities. Let's connect!</p>
+          <a
+            href="https://www.facebook.com/Coryxcarlos"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-fb"
+          >
+            <svg viewBox="0 0 24 24" aria-label="Facebook"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            Message on Facebook
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Carlos Daniel L. Saguran</span>
+    <a href="https://www.facebook.com/Coryxcarlos" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-label="Facebook"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+      facebook.com/Coryxcarlos
+    </a>
+  </footer>
+
+  <!-- CV DOWNLOAD MODAL -->
+  <div id="cv-modal" class="cv-modal" role="dialog" aria-modal="true" aria-label="Generating CV">
+    <div class="cv-modal-inner">
+      <div class="cv-modal-corners">
+        <span class="cv-corner cv-tl"></span>
+        <span class="cv-corner cv-tr"></span>
+        <span class="cv-corner cv-bl"></span>
+        <span class="cv-corner cv-br"></span>
+      </div>
+      <div class="cv-modal-scanlines"></div>
+
+      <div class="cv-modal-phase" id="cv-phase-compile">
+        <div class="cv-terminal-header">
+          <span class="cv-dot red"></span><span class="cv-dot yellow"></span><span class="cv-dot green"></span>
+          <span class="cv-terminal-title">cv_compiler.exe</span>
+        </div>
+        <div class="cv-terminal-body" id="cv-terminal-lines"></div>
+        <div class="cv-progress-wrap">
+          <div class="cv-progress-bar-track">
+            <div class="cv-progress-bar" id="cv-progress-bar"></div>
+          </div>
+          <div class="cv-progress-text" id="cv-progress-text">0%</div>
+        </div>
+      </div>
+
+      <div class="cv-modal-phase hidden" id="cv-phase-done">
+        <div class="cv-done-icon">
+          <svg viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="2" class="cv-circle-anim"/>
+            <polyline points="18,31 26,39 42,22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cv-check-anim"/>
+          </svg>
+        </div>
+        <div class="cv-done-title">CV COMPILED</div>
+        <div class="cv-done-sub">curriculum_vitae.pdf — ready</div>
+        <button class="cv-done-close" id="cv-done-close">[ CLOSE ]</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
