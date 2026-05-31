@@ -1,14 +1,8 @@
-/* ==============================
-   RETRO PORTFOLIO — CARLOS SAGURAN
-   Dark: CRT / Synthwave / Terminal
-   Light: Retro Paper / Warm Zine / 80s Print
-   ============================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=VT323&family=Press+Start+2P&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── DARK MODE (default) — CRT Synthwave ── */
 :root {
   --black:      #060610;
   --surface:    #0d0d1f;
@@ -31,7 +25,6 @@
   --shadow-cyan:  0 0 20px rgba(0,229,255,0.4), 0 0 60px rgba(0,229,255,0.15);
 }
 
-/* ── LIGHT MODE — Warm Retro Paper / 80s Zine ── */
 body.light {
   --black:      #fef9f0;
   --surface:    #fff8ec;
@@ -62,7 +55,6 @@ body {
   transition: background 0.6s ease, color 0.6s ease;
 }
 
-/* Global CRT scanlines on dark */
 body:not(.light)::before {
   content: '';
   position: fixed;
@@ -79,7 +71,6 @@ body:not(.light)::before {
   animation: scanMove 6s linear infinite;
 }
 
-/* Paper texture on light */
 body.light::before {
   content: '';
   position: fixed;
@@ -95,9 +86,6 @@ body.light::before {
   to   { background-position: 0 200px; }
 }
 
-/* ==============================
-   THEME TRANSITION FLASH
-   ============================== */
 .theme-flash {
   position: fixed;
   inset: 0;
@@ -124,9 +112,6 @@ body.light .theme-flash {
   100% { opacity: 0; transform: scale(1.5); }
 }
 
-/* ==============================
-   INTRO OVERLAY
-   ============================== */
 #intro {
   position: fixed;
   inset: 0;
@@ -174,7 +159,6 @@ body.light .theme-flash {
   pointer-events: none;
 }
 
-/* Animated border corners */
 .intro-corner {
   position: absolute;
   width: 48px;
@@ -192,7 +176,6 @@ body.light .theme-flash {
   to { opacity: 1; }
 }
 
-/* Animated corner lines */
 .intro-corner.tl::after,
 .intro-corner.tr::after {
   content: '';
@@ -317,7 +300,6 @@ body.light .theme-flash {
   100% { opacity: 0.6; }
 }
 
-/* Glitch */
 @keyframes glitch {
   0%   { clip-path: inset(0 0 98% 0); transform: translateY(0) translateX(0); }
   10%  { clip-path: inset(30% 0 50% 0); transform: translateY(-3px) translateX(4px); }
@@ -349,7 +331,6 @@ body.light .theme-flash {
   opacity: 0.5;
 }
 
-/* Phosphor scanline on intro */
 #intro::after {
   content: '';
   position: absolute;
@@ -365,16 +346,10 @@ body.light .theme-flash {
   z-index: 3;
 }
 
-/* ==============================
-   SCROLLBAR
-   ============================== */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--accent); box-shadow: 0 0 6px var(--glow); }
 
-/* ==============================
-   NAV
-   ============================== */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -465,14 +440,12 @@ body.light .nav-links a:hover { color: var(--accent); }
 .nav-fb:hover { color: #1877f2; }
 .nav-fb svg { width: 15px; height: 15px; fill: currentColor; }
 
-/* Nav right cluster */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-/* Icon theme toggle */
 .theme-toggle-icon {
   width: 38px;
   height: 38px;
@@ -506,17 +479,12 @@ body:not(.light) .theme-toggle-icon:hover {
   position: absolute;
 }
 
-/* Dark mode: show moon, hide sun */
 body:not(.light) .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
 body:not(.light) .icon-sun  { opacity: 0; transform: rotate(90deg) scale(0.5); }
 
-/* Light mode: show sun, hide moon */
 body.light .icon-sun  { opacity: 1; transform: rotate(0deg) scale(1); }
 body.light .icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.5); }
 
-/* ==============================
-   BUTTONS
-   ============================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -601,9 +569,6 @@ body.light .btn-fb {
 
 .btn-fb svg { width: 16px; height: 16px; fill: currentColor; }
 
-/* ==============================
-   HERO
-   ============================== */
 #hero {
   min-height: 100vh;
   display: grid;
@@ -614,7 +579,6 @@ body.light .btn-fb {
   overflow: hidden;
 }
 
-/* Dark: Synthwave grid */
 .hero-grid-bg {
   position: absolute;
   inset: 0;
@@ -644,7 +608,6 @@ body:not(.light) .hero-grid-bg::after {
   transform: perspective(400px) rotateX(30deg);
 }
 
-/* Light: Ruled paper grid */
 body.light .hero-grid-bg::before {
   content: '';
   position: absolute;
@@ -785,7 +748,6 @@ body:not(.light) .hero-mode-note {
   text-shadow: 0 0 8px rgba(105,255,71,0.5);
 }
 
-/* HERO IMAGE */
 .hero-image-wrap {
   display: flex;
   justify-content: flex-end;
@@ -868,7 +830,6 @@ body.light .hero-img-frame {
   100% { filter: brightness(1) saturate(1); opacity: 1; }
 }
 
-/* Dark: CRT photo effect */
 body:not(.light) .hero-photo {
   filter: contrast(1.1) brightness(0.9);
 }
@@ -881,7 +842,6 @@ body:not(.light) .hero-photo::after {
   mix-blend-mode: screen;
 }
 
-/* Light: Vintage photo effect */
 body.light .hero-photo {
   filter: sepia(0.2) contrast(1.05) brightness(1.02);
 }
@@ -924,9 +884,6 @@ body:not(.light) .hero-img-badge {
   text-transform: uppercase;
 }
 
-/* ==============================
-   SECTION LABELS & TITLES
-   ============================== */
 .section-label {
   font-family: 'VT323', monospace;
   font-size: 0.85rem;
@@ -962,9 +919,6 @@ body.light .section-title {
   text-shadow: 3px 3px 0 rgba(192,57,43,0.12);
 }
 
-/* ==============================
-   ABOUT
-   ============================== */
 #about {
   border-top: 1px solid var(--border);
   padding: 7rem 4rem;
@@ -997,7 +951,6 @@ body.light .about-bio {
   opacity: 1;
 }
 
-/* Stats grid */
 .about-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1064,7 +1017,6 @@ body.light .stat-number {
   margin-top: 0.3rem;
 }
 
-/* Skills */
 .skills-row {
   display: flex;
   flex-wrap: wrap;
@@ -1101,7 +1053,6 @@ body.light .skill-pill:hover {
   background: rgba(40,116,166,0.06);
 }
 
-/* Education */
 .edu-timeline {
   display: flex;
   flex-direction: column;
@@ -1155,9 +1106,6 @@ body.light .skill-pill:hover {
   color: var(--muted);
 }
 
-/* ==============================
-   PROJECTS
-   ============================== */
 #projects {
   border-top: 1px solid var(--border);
   padding: 7rem 4rem;
@@ -1207,7 +1155,6 @@ body.light .project-card:nth-child(2) {
   border-bottom-width: 1px;
 }
 
-/* Dark: neon left bar */
 body:not(.light) .project-card::before {
   content: '';
   position: absolute;
@@ -1222,7 +1169,6 @@ body:not(.light) .project-card::before {
 body:not(.light) .project-card:hover::before { height: 100%; }
 body:not(.light) .project-card:hover { background: var(--surface); }
 
-/* Light: offset shadow hover */
 body.light .project-card:hover {
   transform: translate(-3px, -3px);
   box-shadow: 5px 5px 0 var(--accent), 8px 8px 0 rgba(192,57,43,0.15);
@@ -1296,7 +1242,6 @@ body.light .project-tag {
   border-color: var(--accent2);
 }
 
-/* Night City game card — special purple/cyan glow accent */
 body:not(.light) .project-card--game .project-num {
   color: var(--accent2);
 }
@@ -1336,9 +1281,6 @@ body.light .contact-card {
   margin-bottom: 1.5rem;
 }
 
-/* ==============================
-   FOOTER
-   ============================== */
 footer {
   border-top: 1px solid var(--border);
   padding: 3rem 4rem;
@@ -1367,9 +1309,6 @@ footer a {
 footer a:hover { color: #1877f2; }
 footer a svg { width: 14px; height: 14px; fill: currentColor; }
 
-/* ==============================
-   REVEAL ANIMATIONS
-   ============================== */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -1378,9 +1317,6 @@ footer a svg { width: 14px; height: 14px; fill: currentColor; }
 
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ==============================
-   UNIQUE DARK MODE DECORATIONS
-   ============================== */
 body:not(.light) #about::before {
   content: '';
   position: absolute;
@@ -1390,9 +1326,6 @@ body:not(.light) #about::before {
   pointer-events: none;
 }
 
-/* ==============================
-   UNIQUE LIGHT MODE DECORATIONS
-   ============================== */
 body.light .section-title::after {
   content: '';
   display: block;
@@ -1413,9 +1346,6 @@ body.light .hero-content::before {
   margin-bottom: 0.5rem;
 }
 
-/* ==============================
-   CV DOWNLOAD BUTTON
-   ============================== */
 .btn-cv {
   position: relative;
   display: inline-flex;
@@ -1436,7 +1366,6 @@ body.light .hero-content::before {
   text-decoration: none;
 }
 
-/* Dark mode: neon green border with glow */
 body:not(.light) .btn-cv {
   border: 1px solid var(--accent3);
   box-shadow: 0 0 10px rgba(105,255,71,0.2), inset 0 0 10px rgba(105,255,71,0.03);
@@ -1448,7 +1377,6 @@ body:not(.light) .btn-cv:hover {
   text-shadow: 0 0 8px rgba(105,255,71,0.9);
 }
 
-/* Light mode: retro stamp style */
 body.light .btn-cv {
   border: 2px solid var(--accent3);
   color: var(--accent3);
@@ -1474,7 +1402,6 @@ body.light .btn-cv:hover {
   flex-shrink: 0;
 }
 
-/* Glitch ghost text */
 .cv-btn-glitch {
   position: absolute;
   inset: 0;
@@ -1502,7 +1429,6 @@ body:not(.light) .btn-cv:hover .cv-btn-glitch {
   100% { opacity: 0; transform: translate(0); clip-path: none; }
 }
 
-/* Scan sweep on hover */
 .cv-btn-scan {
   position: absolute;
   inset: 0;
@@ -1521,9 +1447,6 @@ body:not(.light) .btn-cv:hover .cv-btn-scan {
   to   { transform: translateX(100%); }
 }
 
-/* ==============================
-   CV DOWNLOAD MODAL
-   ============================== */
 .cv-modal {
   position: fixed;
   inset: 0;
@@ -1566,7 +1489,6 @@ body.light .cv-modal-inner {
   box-shadow: 6px 6px 0 rgba(192,57,43,0.2);
 }
 
-/* Animated corners */
 .cv-modal-corners { position: absolute; inset: 0; pointer-events: none; }
 
 .cv-corner {
@@ -1584,7 +1506,6 @@ body.light .cv-tl, body.light .cv-tr, body.light .cv-bl, body.light .cv-br {
   border-color: var(--accent);
 }
 
-/* Scanlines in modal */
 .cv-modal-scanlines {
   position: absolute;
   inset: 0;
@@ -1602,7 +1523,6 @@ body.light .cv-tl, body.light .cv-tr, body.light .cv-bl, body.light .cv-br {
 
 body.light .cv-modal-scanlines { display: none; }
 
-/* Phase containers */
 .cv-modal-phase {
   position: relative;
   z-index: 2;
@@ -1610,7 +1530,6 @@ body.light .cv-modal-scanlines { display: none; }
 
 .cv-modal-phase.hidden { display: none; }
 
-/* Terminal header */
 .cv-terminal-header {
   display: flex;
   align-items: center;
@@ -1638,7 +1557,6 @@ body.light .cv-modal-scanlines { display: none; }
   margin-left: 0.5rem;
 }
 
-/* Terminal output lines */
 .cv-terminal-body {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -1666,7 +1584,6 @@ body.light .cv-terminal-body { color: var(--accent3); }
 .cv-line .cv-warn   { color: var(--accent); }
 .cv-line .cv-info   { color: var(--accent2); }
 
-/* Progress bar */
 .cv-progress-wrap {
   margin-top: 1.5rem;
   position: relative;
@@ -1711,7 +1628,6 @@ body.light .cv-progress-bar {
   text-align: right;
 }
 
-/* Done phase */
 .cv-done-icon {
   display: flex;
   justify-content: center;
@@ -1789,23 +1705,10 @@ body:not(.light) .cv-done-title {
   border-color: var(--accent3);
 }
 
-/* ==============================
-   RESPONSIVE — CV BUTTON
-   ============================== */
 
-/* ==============================
-   LARGE SCREENS ≥ 1600px
-   ============================== */
 
-/* ==============================
-   RETRO PORTFOLIO — CARLOS SAGURAN
-   ============================== */
 
-/* ==============================
-   RESPONSIVE — Phone → Tablet → Laptop → Desktop → Big Screen
-   ============================== */
 
-/* ── HAMBURGER MENU ── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1835,12 +1738,10 @@ body.light .hamburger span { box-shadow: none; }
 
 .hamburger:hover { border-color: var(--accent); }
 
-/* Open state */
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { transform: scaleX(0); opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile nav drawer */
 .nav-drawer {
   display: none;
   position: fixed;
@@ -1892,7 +1793,6 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
   cursor: pointer;
 }
 
-/* ── LARGE SCREENS ≥ 1600px ── */
 @media (min-width: 1600px) {
   nav { padding: 1.2rem 6rem; }
 
@@ -1913,10 +1813,7 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
   footer { padding: 3.5rem 6rem; }
 }
 
-/* ── STANDARD DESKTOP 1200–1599px ── */
-/* (default styles handle this range already) */
 
-/* ── LAPTOP 900–1199px ── */
 @media (max-width: 1199px) and (min-width: 901px) {
   nav { padding: 1rem 2.5rem; }
 
@@ -1936,16 +1833,13 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
   footer { padding: 2.5rem; }
 }
 
-/* ── TABLET 601–900px ── */
 @media (max-width: 900px) and (min-width: 601px) {
-  /* Nav: show hamburger, hide links */
   nav {
     padding: 1rem 2rem;
   }
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
-  /* Hero: stack but show image at smaller size */
   #hero {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -1967,21 +1861,18 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
 
   .btn { padding: 0.6rem 1.2rem; font-size: 0.95rem; }
 
-  /* About */
   #about { padding: 5rem 2rem; }
   .about-inner { grid-template-columns: 1fr; gap: 3rem; }
 
   .about-stats { grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
   .stat-number { font-size: 2rem; }
 
-  /* Projects */
   #projects { padding: 5rem 2rem; }
   .projects-grid { grid-template-columns: 1fr 1fr; }
 
   footer { padding: 2rem; }
 }
 
-/* ── PHONE 481–600px ── */
 @media (max-width: 600px) and (min-width: 481px) {
   nav { padding: 0.9rem 1.2rem; }
   .nav-logo { font-size: 1.4rem; letter-spacing: 0.1em; }
@@ -1994,7 +1885,6 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
     gap: 0;
   }
 
-  /* Image sits inline at top-right of content, not full-width block */
   .hero-image-wrap {
     display: flex;
     justify-content: center;
@@ -2039,7 +1929,6 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
   }
 }
 
-/* ── SMALL PHONE ≤ 480px ── */
 @media (max-width: 480px) {
   nav {
     padding: 0.8rem 1rem;
@@ -2049,7 +1938,6 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
-  /* Intro smaller text */
   .intro-word { font-size: clamp(3.5rem, 18vw, 7rem); }
   .intro-accent { font-size: clamp(3.5rem, 18vw, 7rem); }
   .intro-bar-wrap { width: 180px; }
@@ -2060,7 +1948,6 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
     gap: 0;
   }
 
-  /* Small avatar-style image, centered, compact */
   .hero-image-wrap {
     display: flex;
     justify-content: center;
@@ -2120,7 +2007,6 @@ body:not(.light) .nav-drawer a { text-shadow: 0 0 20px var(--glow); }
   }
 }
 
-/* ── ULTRA-WIDE ≥ 2000px ── */
 @media (min-width: 2000px) {
   #hero { max-width: 2000px; margin: 0 auto; padding: 10rem 8rem 6rem; }
   nav { padding: 1.4rem 8rem; }

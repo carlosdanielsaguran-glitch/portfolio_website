@@ -1,6 +1,4 @@
-/* ==============================
-   INTRO — Matrix/Phosphor canvas
-   ============================== */
+
 const canvas = document.getElementById('intro-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -11,7 +9,7 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
-// Mix of katakana, binary and symbols for retro feel
+
 const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01アβ∑ΔΩ#@!%&◆◇▲△□■░▒▓';
 const fontSize = 13;
 let columns, drops, colors;
@@ -55,9 +53,7 @@ function drawMatrix() {
 
 let matrixInterval = setInterval(drawMatrix, 40);
 
-/* ==============================
-   INTRO — dismiss logic
-   ============================== */
+
 const intro  = document.getElementById('intro');
 let dismissed = false;
 
@@ -69,7 +65,7 @@ function dismissIntro() {
   document.body.style.overflow = '';
 }
 
-// Auto dismiss after bar finishes
+
 const autoDismiss = setTimeout(dismissIntro, 4000);
 
 document.addEventListener('keydown', () => {
@@ -84,9 +80,6 @@ intro.addEventListener('click', () => {
 
 document.body.style.overflow = 'hidden';
 
-/* ==============================
-   SCROLL REVEAL
-   ============================== */
 const reveals = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entries) => {
@@ -102,9 +95,6 @@ const observer = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => observer.observe(el));
 
-/* ==============================
-   ACTIVE NAV HIGHLIGHT
-   ============================== */
 const sections = document.querySelectorAll('section[id], div[id]');
 const navLinks  = document.querySelectorAll('.nav-links a');
 
@@ -123,9 +113,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => sectionObserver.observe(s));
 
-/* ==============================
-   SMOOTH SCROLL
-   ============================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
@@ -136,16 +123,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ==============================
-   THEME FLASH ELEMENT
-   ============================== */
 const flashEl = document.createElement('div');
 flashEl.className = 'theme-flash';
 document.body.appendChild(flashEl);
 
-/* ==============================
-   THEME MODE SWITCH
-   ============================== */
 const themeToggle = document.getElementById('theme-toggle');
 const heroPhoto   = document.getElementById('hero-photo');
 const heroModeNote = document.getElementById('hero-mode-note');
@@ -154,14 +135,13 @@ function updateHeroImage(mode) {
   if (!heroPhoto) return;
   const newSrc = heroPhoto.dataset[mode] || heroPhoto.dataset.dark;
 
-  // Animate the photo swap
   heroPhoto.classList.add('theme-transition');
   setTimeout(() => {
     heroPhoto.src = newSrc;
     heroPhoto.classList.remove('hidden');
     const placeholder = document.querySelector('.placeholder-img');
     if (placeholder) placeholder.classList.add('hidden');
-  }, 300); // swap src at midpoint of animation
+  }, 300);
   setTimeout(() => {
     heroPhoto.classList.remove('theme-transition');
   }, 700);
@@ -169,7 +149,7 @@ function updateHeroImage(mode) {
 
 function triggerFlash() {
   flashEl.classList.remove('burst');
-  void flashEl.offsetWidth; // reflow
+  void flashEl.offsetWidth;
   flashEl.classList.add('burst');
 }
 
@@ -196,7 +176,7 @@ function applyTheme(mode, animate = false) {
 function getPreferredTheme() {
   const saved = localStorage.getItem('preferredTheme');
   if (saved === 'light' || saved === 'dark') return saved;
-  return 'dark'; // DEFAULT: dark mode
+  return 'dark';
 }
 
 if (themeToggle) {
@@ -206,12 +186,8 @@ if (themeToggle) {
   });
 }
 
-// Apply theme on load (no animation on initial load)
 applyTheme(getPreferredTheme(), false);
 
-/* ==============================
-   TYPING EFFECT on hero tag
-   ============================== */
 const heroTag = document.querySelector('.hero-tag');
 if (heroTag) {
   const originalText = heroTag.textContent.trim();
@@ -224,9 +200,6 @@ if (heroTag) {
   }, 40);
 }
 
-/* ==============================
-   CURSOR GLOW (dark mode only)
-   ============================== */
 let cursorGlow = null;
 
 function initCursorGlow() {
@@ -263,15 +236,11 @@ function updateCursorGlow() {
   }
 }
 
-// Run after theme applied
 setTimeout(updateCursorGlow, 200);
 if (themeToggle) {
   themeToggle.addEventListener('click', () => setTimeout(updateCursorGlow, 300));
 }
 
-/* ==============================
-   RETRO GLITCH ON HOVER (project cards)
-   ============================== */
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mouseenter', () => {
     const title = card.querySelector('.project-title');
@@ -285,11 +254,7 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
-/* ==============================
-   HAMBURGER MENU
-   ============================== */
 
-// Build the nav drawer dynamically
 const drawer = document.createElement('div');
 drawer.className = 'nav-drawer';
 drawer.innerHTML = `
@@ -341,15 +306,10 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
 });
 
-// Re-apply drawer bg on theme change
 document.getElementById('theme-toggle')?.addEventListener('click', () => {
   setTimeout(() => {
-    // drawer inherits CSS vars via body class, no extra work needed
   }, 100);
 });
-/* ==============================
-   CV DOWNLOAD — Terminal Animation + PDF Generation
-   ============================== */
 
 const cvBtn    = document.getElementById('cv-download-btn');
 const cvModal  = document.getElementById('cv-modal');
@@ -435,8 +395,8 @@ function generateCVContent() {
     font-family: 'Lato', 'Times New Roman', serif;
     font-size: 10.5pt;
     line-height: 1.55;
-    color: #1a1a1a;
-    background: #fff;
+    color:
+    background:
     padding: 0;
   }
 
@@ -445,12 +405,11 @@ function generateCVContent() {
     min-height: 297mm;
     margin: 0 auto;
     padding: 18mm 20mm 18mm 22mm;
-    background: #fff;
+    background:
   }
 
-  /* Header */
   .cv-header {
-    border-bottom: 2.5pt solid #1a1a1a;
+    border-bottom: 2.5pt solid
     padding-bottom: 10pt;
     margin-bottom: 14pt;
   }
@@ -460,7 +419,7 @@ function generateCVContent() {
     font-size: 26pt;
     font-weight: 700;
     letter-spacing: 0.02em;
-    color: #0a0a0a;
+    color:
     line-height: 1.1;
     margin-bottom: 3pt;
   }
@@ -468,7 +427,7 @@ function generateCVContent() {
   .cv-title-line {
     font-size: 10pt;
     font-weight: 400;
-    color: #333;
+    color:
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
@@ -479,12 +438,11 @@ function generateCVContent() {
     gap: 0 20pt;
     margin-top: 7pt;
     font-size: 9pt;
-    color: #444;
+    color:
   }
 
   .cv-contact-row span { display: inline-flex; align-items: center; gap: 4pt; }
 
-  /* Section */
   .cv-section {
     margin-bottom: 14pt;
   }
@@ -495,13 +453,12 @@ function generateCVContent() {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #0a0a0a;
-    border-bottom: 0.75pt solid #888;
+    color:
+    border-bottom: 0.75pt solid
     padding-bottom: 2pt;
     margin-bottom: 7pt;
   }
 
-  /* Education */
   .cv-edu-item {
     display: flex;
     justify-content: space-between;
@@ -512,23 +469,22 @@ function generateCVContent() {
   .cv-edu-left .cv-degree {
     font-weight: 700;
     font-size: 10.5pt;
-    color: #111;
+    color:
   }
 
   .cv-edu-left .cv-school {
     font-size: 10pt;
-    color: #333;
+    color:
     font-style: italic;
   }
 
   .cv-edu-right {
     text-align: right;
     font-size: 9.5pt;
-    color: #555;
+    color:
     white-space: nowrap;
   }
 
-  /* Skills */
   .cv-skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -540,11 +496,10 @@ function generateCVContent() {
   }
 
   .cv-skill-cat strong {
-    color: #111;
+    color:
     font-weight: 700;
   }
 
-  /* Projects */
   .cv-project {
     margin-bottom: 10pt;
   }
@@ -559,35 +514,33 @@ function generateCVContent() {
   .cv-project-name {
     font-weight: 700;
     font-size: 10.5pt;
-    color: #111;
+    color:
   }
 
   .cv-project-tags {
     font-size: 8.5pt;
-    color: #666;
+    color:
     font-style: italic;
   }
 
   .cv-project-desc {
     font-size: 9.5pt;
-    color: #333;
+    color:
     line-height: 1.5;
   }
 
-  /* Profile summary */
   .cv-summary {
     font-size: 10pt;
-    color: #222;
+    color:
     line-height: 1.6;
   }
 
-  /* Footer */
   .cv-footer {
     margin-top: 18pt;
     padding-top: 8pt;
-    border-top: 0.75pt solid #aaa;
+    border-top: 0.75pt solid
     font-size: 8pt;
-    color: #888;
+    color:
     display: flex;
     justify-content: space-between;
   }
@@ -606,9 +559,9 @@ function generateCVContent() {
     <div class="cv-name">Carlos Daniel L. Saguran</div>
     <div class="cv-title-line">Bachelor of Science in Information Technology &nbsp;·&nbsp; STI College Global City</div>
     <div class="cv-contact-row">
-      <span>&#127758; Philippines</span>
-      <span>&#128100; facebook.com/Coryxcarlos</span>
-      <span>&#127979; 2026 Graduate (Expected)</span>
+      <span>&
+      <span>&
+      <span>&
     </div>
   </div>
 
@@ -645,7 +598,7 @@ function generateCVContent() {
     <div class="cv-skills-grid">
       <div class="cv-skill-cat">
         <strong>Programming Languages</strong><br/>
-        HTML5, CSS3, JavaScript (ES6+), Java, C#, C++
+        HTML5, CSS3, JavaScript (ES6+), Java, C
       </div>
       <div class="cv-skill-cat">
         <strong>Web Development</strong><br/>
@@ -682,7 +635,7 @@ function generateCVContent() {
     <div class="cv-project">
       <div class="cv-project-header">
         <span class="cv-project-name">MedTrack — Medical Sales Representative Performance System</span>
-        <span class="cv-project-tags">C# · Database · System Development</span>
+        <span class="cv-project-tags">C
       </div>
       <p class="cv-project-desc">
         Designed and implemented a comprehensive performance tracking system for medical sales representatives.
@@ -710,10 +663,10 @@ function generateCVContent() {
   <div class="cv-section">
     <div class="cv-section-title">Professional Attributes</div>
     <div class="cv-skills-grid">
-      <div class="cv-skill-cat">&#10003; &nbsp;Strong analytical and problem-solving ability</div>
-      <div class="cv-skill-cat">&#10003; &nbsp;Self-directed learner with initiative</div>
-      <div class="cv-skill-cat">&#10003; &nbsp;Full-stack project ownership experience</div>
-      <div class="cv-skill-cat">&#10003; &nbsp;Open to collaborative and agile workflows</div>
+      <div class="cv-skill-cat">&
+      <div class="cv-skill-cat">&
+      <div class="cv-skill-cat">&
+      <div class="cv-skill-cat">&
     </div>
   </div>
 
@@ -746,27 +699,22 @@ function downloadCV() {
 }
 
 function runCVSequence() {
-  // Reset state
   cvTerminal.innerHTML = '';
   setProgress(0);
   cvPhaseCompile.classList.remove('hidden');
   cvPhaseDone.classList.add('hidden');
 
-  // Open modal
   cvModal.classList.add('open');
   document.body.style.overflow = 'hidden';
 
-  // Queue terminal lines
   terminalLines.forEach(({ delay, text, cls }) => {
     addTerminalLine(text, cls, delay);
   });
 
-  // Progress bar steps
   progressSteps.forEach(({ at, pct }) => {
     setTimeout(() => setProgress(pct), at);
   });
 
-  // At 100% → trigger download and show done phase
   setTimeout(() => {
     downloadCV();
 
